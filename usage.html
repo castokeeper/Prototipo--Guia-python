@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cómo Usar Python</title>
+    <!-- Fuente de Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #306998;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #f5f5f5;
+            color: #306998;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        section {
+            background-color: #fff;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #306998;
+            border-bottom: 2px solid #FFD43B;
+            padding-bottom: 0.5rem;
+        }
+
+        .code-example {
+            background-color: #f8f9fa;
+            padding: 1rem;
+            border-radius: 4px;
+            margin: 1rem 0;
+            overflow-x: auto;
+        }
+
+        .code-example pre {
+            font-family: 'Consolas', monospace;
+            white-space: pre-wrap;
+        }
+
+        footer {
+            background-color: #306998;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Cómo Usar Python</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="about.html">Acerca de</a></li>
+                <li><a href="usage.html">Cómo Usar</a></li>
+                <li><a href="videos.html">Videos</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Instalación de Python</h2>
+            <p>Para comenzar a usar Python, primero debes instalarlo en tu sistema. Puedes descargar la última versión desde el sitio web oficial:</p>
+            <a href="https://www.python.org/downloads/">Descargar Python</a>
+            <p>Sigue las instrucciones de instalación para tu sistema operativo. Asegúrate de agregar Python a las variables de entorno para poder ejecutarlo desde la línea de comandos.</p>
+        </section>
+        <section>
+            <h2>Entorno Virtual</h2>
+            <p>Es recomendable utilizar entornos virtuales para aislar las dependencias de tus proyectos. Puedes crear un entorno virtual con el siguiente comando:</p>
+            <div class="code-example">
+                <pre>
+                    <code>
+python -m venv mi_entorno
+                    </code>
+                </pre>
+            </div>
+            <p>Activa el entorno virtual:</p>
+            <div class="code-example">
+                <pre>
+                    <code>
+# En Windows
+mi_entorno\Scripts\activate
+
+# En macOS y Linux
+source mi_entorno/bin/activate
+                    </code>
+                </pre>
+            </div>
+        </section>
+        <section>
+            <h2>Ejecución de Scripts</h2>
+            <p>Para ejecutar un script de Python, utiliza el siguiente comando:</p>
+            <div class="code-example">
+                <pre>
+                    <code>
+python mi_script.py
+                    </code>
+                </pre>
+            </div>
+        </section>
+        <section>
+            <h2>Sintaxis Básica</h2>
+            <p>Python utiliza indentación para definir bloques de código. Aquí tienes un ejemplo:</p>
+            <div class="code-example">
+                <pre>
+                    <code>
+def saludar(nombre):
+    print(f"¡Hola, {nombre}!")
+
+saludar("Mundo")
+                    </code>
+                </pre>
+            </div>
+        </section>
+        <section>
+            <h2>Tipos de Datos</h2>
+            <p>Python tiene varios tipos de datos integrados:</p>
+            <ul>
+                <li>Enteros (<code>int</code>)</li>
+                <li>Flotantes (<code>float</code>)</li>
+                <li>Cadenas (<code>str</code>)</li>
+                <li>Booleanos (<code>bool</code>)</li>
+                <li>Listas (<code>list</code>)</li>
+                <li>Tuplas (<code>tuple</code>)</li>
+                <li>Diccionarios (<code>dict</code>)</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Control de Flujo</h2>
+            <p>Python ofrece estructuras de control de flujo como <code>if</code>, <code>for</code> y <code>while</code>:</p>
+            <div class="code-example">
+                <pre>
+                    <code>
+edad = 20
+if edad >= 18:
+    print("Eres mayor de edad")
+else:
+    print("Eres menor de edad")
+                    </code>
+                </pre>
+            </div>
+        </section>
+        <section>
+            <h2>Funciones</h2>
+            <p>Las funciones son bloques de código reutilizables:</p>
+            <div class="code-example">
+                <pre>
+                    <code>
+def sumar(a, b):
+    return a + b
+
+resultado = sumar(5, 3)
+print(resultado)  # Output: 8
+                    </code>
+                </pre>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Guía de Programación Python | Desarrollado por y para la comunidad Python</p>
+    </footer>
+</body>
+</html>

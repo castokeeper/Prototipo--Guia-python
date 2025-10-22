@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutoriales de Python</title>
+    <!-- Fuente de Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #306998;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #f5f5f5;
+            color: #1a237e;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        section {
+            background-color: #fff;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #306998;
+            border-bottom: 2px solid #FFD43B;
+            padding-bottom: 0.5rem;
+        }
+
+        .video-link {
+            display: block;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background-color: #f8f9fa;
+            border-radius: 4px;
+            text-decoration: none;
+            color: #333;
+            transition: background-color 0.3s;
+        }
+
+        .video-link:hover {
+            background-color: #e9ecef;
+        }
+
+        .skill-level {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            margin-bottom: 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .skill-level.beginner {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .skill-level.intermediate {
+            background-color: #ffc107;
+            color: #333;
+        }
+
+        .skill-level.advanced {
+            background-color: #dc3545;
+            color: white;
+        }
+
+        footer {
+            background-color: #306998;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Tutoriales de Python</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="about.html">Acerca de</a></li>
+                <li><a href="usage.html">Cómo Usar</a></li>
+                <li><a href="videos.html">Videos</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Tutoriales para Principiantes</h2>
+            <p>Estos videos son perfectos para aquellos que están comenzando con Python.</p>
+            
+            <a href="https://www.youtube.com/watch?v=kqtD5dpn9C8" class="video-link">
+                <h3>Python para Principiantes - Aprende Python en 1 Hora</h3>
+                <span class="skill-level beginner">Principiante</span>
+                <p>Tutorial perfecto para principiantes absolutos en programación Python.</p>
+            </a>
+
+            <a href="https://www.youtube.com/watch?v=rfscVS0vtbw" class="video-link">
+                <h3>Aprende Python - Curso Completo para Principiantes</h3>
+                <span class="skill-level beginner">Principiante</span>
+                <p>Curso completo de Python que cubre todos los conceptos básicos.</p>
+            </a>
+
+            <a href="https://www.youtube.com/watch?v=_uQrJ0TkZlc" class="video-link">
+                <h3>Tutorial de Python - Curso Completo de Python para Principiantes</h3>
+                <span class="skill-level beginner">Principiante</span>
+                <p>Guía paso a paso de los fundamentos de la programación Python.</p>
+            </a>
+        </section>
+
+        <section>
+            <h2>Proyectos Populares de Python para Principiantes</h2>
+            <p>Aprende a construir proyectos sencillos con Python.</p>
+            
+            <a href="https://www.youtube.com/watch?v=DLn3jOsNRVE" class="video-link">
+                <h3>Tutorial de Calculadora Simple en Python</h3>
+                <span class="skill-level beginner">Principiante</span>
+                <p>Construye tu primer proyecto en Python: una calculadora simple.</p>
+            </a>
+
+            <a href="https://www.youtube.com/watch?v=8ext9G7xspg" class="video-link">
+                <h3>Tutorial de Desarrollo de Juegos en Python</h3>
+                <span class="skill-level beginner">Principiante</span>
+                <p>Crea tu primer juego con Python.</p>
+            </a>
+        </section>
+
+         <section>
+            <h2>Tutoriales Intermedios</h2>
+            <p>Estos videos son para aquellos que ya tienen conocimientos básicos de Python y desean profundizar en temas más avanzados.</p>
+            
+            <a href="https://www.youtube.com/watch?v=Ej_02jJ6t7Q" class="video-link">
+                <h3>Programación Orientada a Objetos en Python</h3>
+                <span class="skill-level intermediate">Intermedio</span>
+                <p>Aprende los conceptos de la programación orientada a objetos en Python.</p>
+            </a>
+
+            <a href="https://www.youtube.com/watch?v=7H5BxDHwcJA" class="video-link">
+                <h3>Desarrollo de APIs con Flask</h3>
+                <span class="skill-level intermediate">Intermedio</span>
+                <p>Crea APIs RESTful con el framework Flask.</p>
+            </a>
+        </section>
+
+        <section>
+            <h2>Tutoriales Avanzados</h2>
+            <p>Estos videos son para desarrolladores experimentados que desean explorar temas avanzados en Python.</p>
+            
+            <a href="https://www.youtube.com/watch?v=mGwskFZO-lk" class="video-link">
+                <h3>Metaclases en Python</h3>
+                <span class="skill-level advanced">Avanzado</span>
+                <p>Profundiza en las metaclases de Python y cómo utilizarlas.</p>
+            </a>
+
+            <a href="https://www.youtube.com/watch?v=S_L-91KRuPU" class="video-link">
+                <h3>Patrones de Diseño en Python</h3>
+                <span class="skill-level advanced">Avanzado</span>
+                <p>Aprende sobre patrones de diseño comunes en Python y cómo implementarlos.</p>
+            </a>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Guía de Programación Python | Desarrollado por y para la comunidad Python</p>
+    </footer>
+</body>
+</html>
