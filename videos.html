@@ -8,128 +8,44 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <!-- Estilos CSS -->
     <link rel="stylesheet" href="css/main.css">
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-
-        header {
-            background-color: #306998;
-            color: white;
-            padding: 1rem;
-            text-align: center;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        nav ul {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            transition: background-color 0.3s;
-        }
-
-        nav a:hover {
-            background-color: #f5f5f5;
-            color: #1a237e;
-        }
-
-        main {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
-        section {
-            background-color: #fff;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        h2 {
-            color: #306998;
-            border-bottom: 2px solid #FFD43B;
-            padding-bottom: 0.5rem;
-        }
-
-        .video-link {
-            display: block;
-            margin-bottom: 1rem;
-            padding: 1rem;
-            background-color: #f8f9fa;
-            border-radius: 4px;
-            text-decoration: none;
-            color: #333;
-            transition: background-color 0.3s;
-        }
-
-        .video-link:hover {
-            background-color: #e9ecef;
-        }
-
-        .skill-level {
-            display: inline-block;
-            padding: 0.25rem 0.5rem;
-            margin-bottom: 0.5rem;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            font-weight: bold;
-        }
-
-        .skill-level.beginner {
-            background-color: #28a745;
-            color: white;
-        }
-
-        .skill-level.intermediate {
-            background-color: #ffc107;
-            color: #333;
-        }
-
-        .skill-level.advanced {
-            background-color: #dc3545;
-            color: white;
-        }
-
-        footer {
-            background-color: #306998;
-            color: white;
-            text-align: center;
-            padding: 1rem;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
 </head>
 <body>
     <header>
-        <h1>Tutoriales de Python</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="about.html">Acerca de</a></li>
-                <li><a href="usage.html">Cómo Usar</a></li>
-                <li><a href="videos.html">Videos</a></li>
-            </ul>
-        </nav>
+        <div class="header-inner">
+            <!-- Menú desplegable de secciones -->
+            <div class="sections-dropdown">
+                <button class="dropdown-toggle" aria-label="Ver secciones de esta página">
+                    📑 Secciones
+                    <span class="arrow">▼</span>
+                </button>
+                <div class="dropdown-menu">
+                    <ul>
+                        <!-- Se genera automáticamente con JS -->
+                    </ul>
+                </div>
+            </div>
+
+            <a href="index.html" class="brand">
+                <img src="assets/logo.svg" alt="Logo Py" class="logo">
+                <span class="site-title">Tutoriales de Python</span>
+            </a>
+
+            <button class="nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
+                <span class="hamburger" aria-hidden="true"></span>
+                <span class="sr-only">Abrir menú</span>
+            </button>
+
+            <nav class="primary-nav" id="primary-navigation" data-visible="false">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="about.html">Acerca de</a></li>
+                    <li><a href="usage.html">Cómo Usar</a></li>
+                    <li><a href="videos.html">Videos</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
+    
     <main>
         <section>
             <h2>Tutoriales para Principiantes</h2>
@@ -205,8 +121,10 @@
             </a>
         </section>
     </main>
+
     <footer>
         <p>&copy; 2023 Guía de Programación Python | Desarrollado por y para la comunidad Python</p>
     </footer>
+    <script src="js/main.js"></script>
 </body>
 </html>

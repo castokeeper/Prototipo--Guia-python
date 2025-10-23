@@ -11,15 +11,26 @@
 </head>
 <body>
     <header>
-        <h1>Guía de Programación Python</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="about.html">Acerca de</a></li>
-                <li><a href="usage.html">Cómo Usar</a></li>
-                <li><a href="videos.html">Videos</a></li>
-            </ul>
-        </nav>
+        <div class="header-inner">
+            <a href="index.html" class="brand">
+                <img src="assets/logo.svg" alt="Logo Py" class="logo">
+                <span class="site-title">Guía de Programación Python</span>
+            </a>
+
+            <button class="nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
+                <span class="hamburger" aria-hidden="true"></span>
+                <span class="sr-only">Abrir menú</span>
+            </button>
+
+            <nav class="primary-nav" id="primary-navigation" data-visible="false">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="about.html">Acerca de</a></li>
+                    <li><a href="usage.html">Cómo Usar</a></li>
+                    <li><a href="videos.html">Videos</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
     <main>
         <section>
@@ -54,5 +65,6 @@ print(saludar("Programador"))
     <footer>
         <p>&copy; 2023 Guía de Programación Python | Desarrollado por y para la comunidad Python</p>
     </footer>
+    <script src="js/main.js"></script>
 </body>
 </html>

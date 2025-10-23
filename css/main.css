@@ -1,6 +1,6 @@
 /* Variables CSS para consistencia en colores y valores */
 :root {
-    --primary-color: #1a237e !important;
+    --primary-color: #1a237e;
     --secondary-color: #7986cb;
     --background-color: #f5f5f5;
     --text-color: #2c3e50;
@@ -22,35 +22,208 @@ body {
 
 /* Encabezado y navegación */
 header {
-    background-color: var(--primary-color);
+    background: linear-gradient(135deg, var(--primary-color) 0%, #2541a8 100%);
     color: var(--white);
-    padding: 1rem;
-    text-align: center;
+    padding: 1rem 0.75rem;
     box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 40;
+}
+/* Header inner layout */
+.header-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0 1rem;
+    flex-wrap: wrap;
 }
 
-nav ul {
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    color: var(--white);
+}
+
+.logo {
+    width: 44px;
+    height: 44px;
+    display: block;
+}
+
+.site-title {
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+/* Navigation */
+.primary-nav {
+    margin-left: auto;
+}
+
+.primary-nav ul {
     list-style: none;
     padding: 0;
+    margin: 0;
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 1.5rem;
+    gap: 1rem;
+    align-items: center;
 }
 
-nav a {
+.primary-nav a {
     color: var(--white);
     text-decoration: none;
-    padding: 0.5rem 1.2rem;
-    border-radius: var(--border-radius);
+    padding: 0.45rem 0.9rem;
+    border-radius: 6px;
     transition: var(--transition);
-    font-weight: 500;
+    font-weight: 600;
+    background: transparent;
 }
 
-nav a:hover {
-    background-color: var(--secondary-color);
+.primary-nav a:hover,
+.primary-nav a:focus {
+    background-color: rgba(255,255,255,0.08);
     color: var(--white);
     transform: translateY(-2px);
+}
+
+/* Menú desplegable de secciones en header */
+.sections-dropdown {
+    position: relative;
+    margin-right: auto;
+    order: -1;
+}
+
+.dropdown-toggle {
+    background: rgba(255,255,255,0.12);
+    color: var(--white);
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.dropdown-toggle:hover {
+    background: rgba(255,255,255,0.18);
+    border-color: rgba(255,255,255,0.3);
+}
+
+.dropdown-toggle .arrow {
+    font-size: 0.7rem;
+    transition: transform 0.3s ease;
+}
+
+.sections-dropdown.active .dropdown-toggle .arrow {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    left: 0;
+    background: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    min-width: 250px;
+    max-width: 350px;
+    max-height: 400px;
+    overflow-y: auto;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: var(--transition);
+    z-index: 50;
+}
+
+.sections-dropdown.active .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu ul {
+    list-style: none;
+    padding: 0.5rem;
+    margin: 0;
+}
+
+.dropdown-menu li {
+    margin: 0;
+}
+
+.dropdown-menu a {
+    display: block;
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 0.7rem 1rem;
+    border-radius: 4px;
+    transition: var(--transition);
+    font-size: 0.9rem;
+    border-left: 3px solid transparent;
+}
+
+.dropdown-menu a:hover {
+    background-color: rgba(121, 134, 203, 0.1);
+    border-left-color: var(--secondary-color);
+    padding-left: 1.2rem;
+}
+
+.dropdown-menu a.active {
+    background-color: rgba(26, 35, 126, 0.08);
+    border-left-color: var(--primary-color);
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+/* Mobile nav toggle */
+.nav-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    color: var(--white);
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.nav-toggle .hamburger,
+.nav-toggle .hamburger::before,
+.nav-toggle .hamburger::after {
+    display: block;
+    width: 26px;
+    height: 2px;
+    background: currentColor;
+    border-radius: 2px;
+    transition: transform 0.25s ease;
+    position: relative;
+}
+
+.nav-toggle .hamburger::before,
+.nav-toggle .hamburger::after {
+    content: '';
+    position: absolute;
+    left: 0;
+}
+
+.nav-toggle .hamburger::before { top: -8px; }
+.nav-toggle .hamburger::after { top: 8px; }
+
+/* Mobile nav hidden by default */
+.primary-nav[data-visible="false"] {
+    display: none;
+}
+
+.primary-nav[data-visible="true"] {
+    display: block;
 }
 
 /* Estructura principal */
@@ -67,6 +240,7 @@ section {
     border-radius: var(--border-radius);
     box-shadow: var(--shadow);
     transition: var(--transition);
+    scroll-margin-top: 100px;
 }
 
 section:hover {
@@ -135,6 +309,54 @@ h2 {
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
+/* Estilos para la página de videos */
+.video-link {
+    display: block;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    color: var(--text-color);
+    transition: var(--transition);
+    border-left: 4px solid transparent;
+}
+
+.video-link:hover {
+    background-color: #e9ecef;
+    border-left-color: var(--secondary-color);
+    transform: translateX(4px);
+}
+
+.video-link h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+}
+
+.skill-level {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    margin-bottom: 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.skill-level.beginner {
+    background-color: #28a745;
+    color: white;
+}
+
+.skill-level.intermediate {
+    background-color: #ffc107;
+    color: #333;
+}
+
+.skill-level.advanced {
+    background-color: #dc3545;
+    color: white;
+}
+
 /* Pie de página */
 footer {
     background-color: var(--primary-color);
@@ -147,27 +369,85 @@ footer {
     box-shadow: 0 -4px 6px rgba(0,0,0,0.1);
 }
 
+/* Small utility for container centering inside sections */
+.container-center {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
 /* Utilidades */
 .text-center {
     text-align: center;
 }
 
+/* Smooth scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Screen reader only text */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        gap: 1rem;
+    .nav-toggle { display: inline-flex; }
+
+    .primary-nav[data-visible="true"] {
+        position: absolute;
+        top: 64px;
+        right: 12px;
+        background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,255,255,0.97));
+        color: var(--text-color);
+        border-radius: 8px;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        padding: 0.75rem;
+        min-width: 200px;
     }
 
-    main {
-        padding: 1rem;
+    .primary-nav ul { flex-direction: column; gap: 0.5rem; }
+
+    /* Dropdown de secciones en móvil */
+    .sections-dropdown {
+        margin-right: 0;
+        order: 0;
+        width: auto;
     }
 
-    section {
-        padding: 1.5rem;
+    .dropdown-toggle {
+        width: auto;
+        justify-content: center;
+        padding: 0.4rem 0.8rem;
+        font-size: 0.85rem;
     }
 
-    .hero-image {
-        height: 150px;
+    .dropdown-menu {
+        position: fixed;
+        top: auto;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        max-height: 60vh;
+        border-radius: var(--border-radius) var(--border-radius) 0 0;
+        min-width: auto;
     }
+
+    .sections-dropdown.active .dropdown-menu {
+        transform: translateY(0);
+    }
+
+    main { padding: 1rem; }
+
+    section { padding: 1.5rem; }
+
+    .hero-image { height: 150px; }
 }
